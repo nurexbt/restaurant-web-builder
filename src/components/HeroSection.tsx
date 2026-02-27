@@ -12,7 +12,7 @@ const HeroSection = () => {
           alt="Beautifully plated fine dining dish"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0" />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       {/* Navigation */}
@@ -40,7 +40,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-display text-5xl md:text-7xl lg:text-8xl font-medium leading-tight mb-8"
+          className="font-display text-5xl md:text-7xl lg:text-8xl font-medium leading-tight mb-8 text-white drop-shadow-lg"
         >
           Where Every Dish
           <br />
@@ -50,7 +50,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-muted-foreground font-body text-lg mb-10 max-w-xl mx-auto"
+          className="text-white/80 font-body text-lg mb-10 max-w-xl mx-auto drop-shadow"
         >
           An intimate culinary journey crafted with passion, seasonal ingredients, and timeless technique.
         </motion.p>

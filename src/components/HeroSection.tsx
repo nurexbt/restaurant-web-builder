@@ -18,7 +18,7 @@ const HeroSection = () => {
       {/* Navigation */}
       <nav className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-6 md:px-16 py-6">
         <span className="font-display text-2xl tracking-wider text-primary">AURUM</span>
-        <div className="hidden md:flex items-center gap-8 font-body text-sm tracking-widest uppercase text-foreground/80">
+        <div className="hidden md:flex items-center gap-8 font-body text-sm tracking-widest uppercase text-white">
           <a href="#about" className="hover:text-primary transition-colors">About</a>
           <a href="#menu" className="hover:text-primary transition-colors">Menu</a>
           <a href="#reservation" className="hover:text-primary transition-colors">Reserve</a>

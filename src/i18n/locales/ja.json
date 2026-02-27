@@ -71,5 +71,10 @@
     "hoursMon": "月曜日：定休日",
     "contact": "お問い合わせ",
     "copyright": "© 2026 Aurum. All rights reserved."
+  },
+  "location": {
+    "subtitle": "アクセス",
+    "title": "お店を",
+    "titleAccent": "見つける"
   }
 }

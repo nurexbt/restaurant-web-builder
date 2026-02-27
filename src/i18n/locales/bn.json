@@ -71,5 +71,10 @@
     "hoursMon": "সোমবার: বন্ধ",
     "contact": "যোগাযোগ",
     "copyright": "© ২০২৬ Aurum. সর্বস্বত্ব সংরক্ষিত।"
+  },
+  "location": {
+    "subtitle": "অবস্থান",
+    "title": "আমাদের",
+    "titleAccent": "খুঁজুন"
   }
 }

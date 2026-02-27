@@ -71,5 +71,10 @@
     "hoursMon": "Monday: Closed",
     "contact": "Contact",
     "copyright": "© 2026 Aurum. All rights reserved."
+  },
+  "location": {
+    "subtitle": "Location",
+    "title": "Find",
+    "titleAccent": "Us"
   }
 }

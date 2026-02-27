@@ -7,7 +7,7 @@ const ReservationSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="reservation" className="py-24 md:py-32 px-6 md:px-16">
+    <section id="reservation" className="py-12 md:py-16 px-6 md:px-16">
       <div className="max-w-2xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

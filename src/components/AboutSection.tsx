@@ -6,7 +6,7 @@ const AboutSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="about" className="py-24 md:py-32 px-6 md:px-16">
+    <section id="about" className="py-12 md:py-16 px-6 md:px-16">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         <motion.div
           initial={{ opacity: 0, x: -40 }}

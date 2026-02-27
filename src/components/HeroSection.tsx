@@ -22,7 +22,7 @@ const HeroSection = () => {
           <a href="#about" className="hover:text-primary transition-colors">About</a>
           <a href="#menu" className="hover:text-primary transition-colors">Menu</a>
           <a href="#reservation" className="hover:text-primary transition-colors">Reserve</a>
-          <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
+          <a href="#contact" className="bg-primary text-primary-foreground px-4 py-2 rounded hover:bg-primary/90 transition-colors">Contact</a>
         </div>
       </nav>
 

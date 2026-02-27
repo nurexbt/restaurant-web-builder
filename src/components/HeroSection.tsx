@@ -1,8 +1,12 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import heroImage from "@/assets/herobg.jpg";
 import { Button } from "@/components/ui/button";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const HeroSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background image */}
@@ -19,10 +23,11 @@ const HeroSection = () => {
       <nav className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-6 md:px-16 py-6">
         <span className="font-display text-2xl tracking-wider text-primary">AURUM</span>
         <div className="hidden md:flex items-center gap-8 font-body text-sm tracking-widest uppercase text-white">
-          <a href="#about" className="hover:text-primary transition-colors">About</a>
-          <a href="#menu" className="hover:text-primary transition-colors">Menu</a>
-          <a href="#reservation" className="hover:text-primary transition-colors">Reserve</a>
-          <a href="#contact" className="bg-primary text-primary-foreground px-4 py-2 rounded hover:bg-primary/90 transition-colors">Contact</a>
+          <a href="#about" className="hover:text-primary transition-colors">{t("nav.about")}</a>
+          <a href="#menu" className="hover:text-primary transition-colors">{t("nav.menu")}</a>
+          <a href="#reservation" className="hover:text-primary transition-colors">{t("nav.reserve")}</a>
+          <a href="#contact" className="bg-primary text-primary-foreground px-4 py-2 rounded hover:bg-primary/90 transition-colors">{t("nav.contact")}</a>
+          <LanguageSwitcher />
         </div>
       </nav>
 
@@ -34,7 +39,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8 }}
           className="text-primary font-body text-sm tracking-[0.3em] uppercase mb-6"
         >
-          Fine Dining Experience
+          {t("hero.subtitle")}
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -42,9 +47,9 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="font-display text-5xl md:text-7xl lg:text-8xl font-medium leading-tight mb-8 text-white drop-shadow-lg"
         >
-          Where Every Dish
+          {t("hero.title1")}
           <br />
-          <span className="text-gold-gradient italic">Tells a Story</span>
+          <span className="text-gold-gradient italic">{t("hero.title2")}</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -52,7 +57,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-white/80 font-body text-lg mb-10 max-w-xl mx-auto drop-shadow"
         >
-          An intimate culinary journey crafted with passion, seasonal ingredients, and timeless technique.
+          {t("hero.description")}
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -60,7 +65,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <Button variant="default" size="lg" className="tracking-widest uppercase text-sm px-10 py-6" asChild>
-            <a href="#reservation">Reserve a Table</a>
+            <a href="#reservation">{t("hero.cta")}</a>
           </Button>
         </motion.div>
       </div>

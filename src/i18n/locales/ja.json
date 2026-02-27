@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "about": "私たちについて",
+    "menu": "メニュー",
+    "reserve": "予約",
+    "contact": "お問い合わせ"
+  },
+  "hero": {
+    "subtitle": "至高のダイニング体験",
+    "title1": "すべての料理が",
+    "title2": "物語を語る",
+    "description": "情熱、旬の食材、そして時を超えた技術で紡ぐ、親密な美食の旅。",
+    "cta": "テーブルを予約する"
+  },
+  "menu": {
+    "subtitle": "厳選セレクション",
+    "title": "シグネチャー",
+    "titleAccent": "ディッシュ",
+    "dish1Name": "サフランタリアテッレ",
+    "dish1Desc": "手打ちパスタ、熟成パルメザン、トリュフバター、マイクロハーブ",
+    "dish2Name": "和牛テンダーロイン",
+    "dish2Desc": "A5和牛、季節の根菜、赤ワインリダクション",
+    "dish3Name": "ゴールデンガナッシュ",
+    "dish3Desc": "ヴァローナチョコレート、塩キャラメル、食用金箔"
+  },
+  "about": {
+    "subtitle": "私たちの物語",
+    "title1": "卓越の",
+    "titleAccent": "伝統",
+    "p1": "街の中心に佇むAurumは、2010年以来、料理芸術の灯台となっています。私たちの哲学はシンプルです — 食材を敬い、技を尊び、心に残る瞬間を創ること。",
+    "p2": "シェフのエレナ・マルケッティは、イタリア、フランス、日本の厨房で20年以上の経験を持ち、一皿一皿に世界の影響を織り込んでいます。",
+    "years": "15+",
+    "yearsLabel": "卓越の歴史",
+    "stars": "★★",
+    "starsLabel": "ミシュランの星"
+  },
+  "reservation": {
+    "subtitle": "テーブルを予約",
+    "title": "ご",
+    "titleAccent": "予約",
+    "description": "忘れられない夜をお過ごしください。48時間前までのご予約をお勧めいたします。",
+    "name": "お名前",
+    "phone": "電話番号",
+    "guests": "ゲスト数",
+    "cta": "今すぐ予約"
+  },
+  "careers": {
+    "subtitle": "チームに参加",
+    "title": "Aurumで",
+    "titleAccent": "キャリア",
+    "titleSuffix": "を見つける",
+    "description": "料理の卓越性とおもてなしに情熱を共有する方を常に探しています。",
+    "sousChef": "副料理長",
+    "sommelier": "ソムリエ",
+    "frontOfHouse": "フロント・オブ・ハウス",
+    "fullTime": "フルタイム",
+    "partTime": "パートタイム",
+    "sousChefDesc": "マルケッティシェフとともに、厳選された食材で季節のメニューを創作します。",
+    "sommelierDesc": "受賞歴のあるワインリストを監修し、ゲストに卓越したペアリングをご案内します。",
+    "frontOfHouseDesc": "温かさと細やかな心配りで、記憶に残るダイニング体験をお届けします。",
+    "applyNow": "応募する →",
+    "noRole": "ご希望のポジションが見つかりませんか？履歴書を",
+    "emailLink": "careers@aurum.com",
+    "noRoleSuffix": "までお送りください"
+  },
+  "footer": {
+    "description": "季節の料理の芸術を称える、親密なファインダイニング体験。",
+    "hours": "営業時間",
+    "hoursTueSat": "火曜日〜土曜日：午後6時〜午後11時",
+    "hoursSun": "日曜ブランチ：午前11時〜午後3時",
+    "hoursMon": "月曜日：定休日",
+    "contact": "お問い合わせ",
+    "copyright": "© 2026 Aurum. All rights reserved."
+  }
+}

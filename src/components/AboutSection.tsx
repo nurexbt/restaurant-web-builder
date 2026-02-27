@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import interiorImage from "@/assets/restaurant-interior.jpg";
 
 const AboutSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="about" className="py-24 md:py-32 px-6 md:px-16">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
@@ -27,32 +30,24 @@ const AboutSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <p className="text-primary font-body text-sm tracking-[0.3em] uppercase mb-4">Our Story</p>
+          <p className="text-primary font-body text-sm tracking-[0.3em] uppercase mb-4">{t("about.subtitle")}</p>
           <h2 className="font-display text-4xl md:text-5xl font-medium mb-8 leading-tight">
-            A Tradition of
+            {t("about.title1")}
             <br />
-            <span className="italic text-gold-gradient">Excellence</span>
+            <span className="italic text-gold-gradient">{t("about.titleAccent")}</span>
           </h2>
           <div className="space-y-5 text-muted-foreground font-body leading-relaxed">
-            <p>
-              Nestled in the heart of the city, Aurum has been a beacon of culinary
-              artistry since 2010. Our philosophy is simple — honor the ingredient,
-              respect the craft, and create moments that linger.
-            </p>
-            <p>
-              Chef Elena Marchetti brings over two decades of experience from
-              kitchens across Italy, France, and Japan, weaving global influences
-              into every thoughtfully composed plate.
-            </p>
+            <p>{t("about.p1")}</p>
+            <p>{t("about.p2")}</p>
           </div>
           <div className="mt-10 flex gap-12">
             <div>
-              <p className="font-display text-3xl text-primary">15+</p>
-              <p className="text-muted-foreground text-sm mt-1">Years of Excellence</p>
+              <p className="font-display text-3xl text-primary">{t("about.years")}</p>
+              <p className="text-muted-foreground text-sm mt-1">{t("about.yearsLabel")}</p>
             </div>
             <div>
-              <p className="font-display text-3xl text-primary">★★</p>
-              <p className="text-muted-foreground text-sm mt-1">Michelin Stars</p>
+              <p className="font-display text-3xl text-primary">{t("about.stars")}</p>
+              <p className="text-muted-foreground text-sm mt-1">{t("about.starsLabel")}</p>
             </div>
           </div>
         </motion.div>

@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "about": "About",
+    "menu": "Menu",
+    "reserve": "Reserve",
+    "contact": "Contact"
+  },
+  "hero": {
+    "subtitle": "Fine Dining Experience",
+    "title1": "Where Every Dish",
+    "title2": "Tells a Story",
+    "description": "An intimate culinary journey crafted with passion, seasonal ingredients, and timeless technique.",
+    "cta": "Reserve a Table"
+  },
+  "menu": {
+    "subtitle": "Curated Selection",
+    "title": "Signature",
+    "titleAccent": "Dishes",
+    "dish1Name": "Saffron Tagliatelle",
+    "dish1Desc": "Hand-rolled pasta, aged parmesan, truffle butter, micro herbs",
+    "dish2Name": "Wagyu Tenderloin",
+    "dish2Desc": "A5 wagyu, seasonal root vegetables, red wine reduction",
+    "dish3Name": "Golden Ganache",
+    "dish3Desc": "Valrhona chocolate, salted caramel, edible gold leaf"
+  },
+  "about": {
+    "subtitle": "Our Story",
+    "title1": "A Tradition of",
+    "titleAccent": "Excellence",
+    "p1": "Nestled in the heart of the city, Aurum has been a beacon of culinary artistry since 2010. Our philosophy is simple — honor the ingredient, respect the craft, and create moments that linger.",
+    "p2": "Chef Elena Marchetti brings over two decades of experience from kitchens across Italy, France, and Japan, weaving global influences into every thoughtfully composed plate.",
+    "years": "15+",
+    "yearsLabel": "Years of Excellence",
+    "stars": "★★",
+    "starsLabel": "Michelin Stars"
+  },
+  "reservation": {
+    "subtitle": "Book Your Table",
+    "title": "Make a",
+    "titleAccent": "Reservation",
+    "description": "Join us for an unforgettable evening. We recommend booking at least 48 hours in advance.",
+    "name": "Full Name",
+    "phone": "Phone Number",
+    "guests": "Number of Guests",
+    "cta": "Reserve Now"
+  },
+  "careers": {
+    "subtitle": "Join Our Team",
+    "title": "Find a",
+    "titleAccent": "Career",
+    "titleSuffix": "at Aurum",
+    "description": "We're always looking for passionate individuals who share our dedication to culinary excellence and hospitality.",
+    "sousChef": "Sous Chef",
+    "sommelier": "Sommelier",
+    "frontOfHouse": "Front of House",
+    "fullTime": "Full-time",
+    "partTime": "Part-time",
+    "sousChefDesc": "Work alongside Chef Marchetti crafting seasonal menus with premium ingredients.",
+    "sommelierDesc": "Curate our award-winning wine list and guide guests through exceptional pairings.",
+    "frontOfHouseDesc": "Deliver memorable dining experiences with warmth and impeccable attention to detail.",
+    "applyNow": "Apply Now →",
+    "noRole": "Don't see your role? Send your CV to",
+    "emailLink": "careers@aurum.com",
+    "noRoleSuffix": ""
+  },
+  "footer": {
+    "description": "An intimate fine dining experience celebrating the art of seasonal cuisine.",
+    "hours": "Hours",
+    "hoursTueSat": "Tuesday – Saturday: 6:00 PM – 11:00 PM",
+    "hoursSun": "Sunday Brunch: 11:00 AM – 3:00 PM",
+    "hoursMon": "Monday: Closed",
+    "contact": "Contact",
+    "copyright": "© 2026 Aurum. All rights reserved."
+  }
+}

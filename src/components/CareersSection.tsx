@@ -1,28 +1,31 @@
 import { motion } from "framer-motion";
-import { Briefcase, ChefHat, Wine, Users } from "lucide-react";
-
-const positions = [
-  {
-    icon: ChefHat,
-    title: "Sous Chef",
-    type: "Full-time",
-    description: "Work alongside Chef Marchetti crafting seasonal menus with premium ingredients.",
-  },
-  {
-    icon: Wine,
-    title: "Sommelier",
-    type: "Full-time",
-    description: "Curate our award-winning wine list and guide guests through exceptional pairings.",
-  },
-  {
-    icon: Users,
-    title: "Front of House",
-    type: "Part-time",
-    description: "Deliver memorable dining experiences with warmth and impeccable attention to detail.",
-  },
-];
+import { useTranslation } from "react-i18next";
+import { ChefHat, Wine, Users } from "lucide-react";
 
 const CareersSection = () => {
+  const { t } = useTranslation();
+
+  const positions = [
+    {
+      icon: ChefHat,
+      title: t("careers.sousChef"),
+      type: t("careers.fullTime"),
+      description: t("careers.sousChefDesc"),
+    },
+    {
+      icon: Wine,
+      title: t("careers.sommelier"),
+      type: t("careers.fullTime"),
+      description: t("careers.sommelierDesc"),
+    },
+    {
+      icon: Users,
+      title: t("careers.frontOfHouse"),
+      type: t("careers.partTime"),
+      description: t("careers.frontOfHouseDesc"),
+    },
+  ];
+
   return (
     <section id="careers" className="py-24 md:py-32 px-6 md:px-16 bg-secondary/30">
       <div className="max-w-6xl mx-auto">
@@ -34,20 +37,20 @@ const CareersSection = () => {
           className="text-center mb-16"
         >
           <p className="text-primary font-body text-sm tracking-[0.3em] uppercase mb-4">
-            Join Our Team
+            {t("careers.subtitle")}
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-medium">
-            Find a <span className="italic text-gold-gradient">Career</span> at Aurum
+            {t("careers.title")} <span className="italic text-gold-gradient">{t("careers.titleAccent")}</span> {t("careers.titleSuffix")}
           </h2>
           <p className="text-muted-foreground font-body mt-6 max-w-xl mx-auto leading-relaxed">
-            We're always looking for passionate individuals who share our dedication to culinary excellence and hospitality.
+            {t("careers.description")}
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {positions.map((pos, i) => (
             <motion.div
-              key={pos.title}
+              key={i}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -63,7 +66,7 @@ const CareersSection = () => {
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">{pos.description}</p>
               <button className="text-primary font-body text-sm tracking-wider uppercase hover:underline underline-offset-4 transition-all">
-                Apply Now →
+                {t("careers.applyNow")}
               </button>
             </motion.div>
           ))}
@@ -77,10 +80,11 @@ const CareersSection = () => {
           className="text-center mt-12"
         >
           <p className="text-muted-foreground text-sm font-body">
-            Don't see your role? Send your CV to{" "}
+            {t("careers.noRole")}{" "}
             <a href="mailto:careers@aurum.com" className="text-primary hover:underline underline-offset-4">
-              careers@aurum.com
+              {t("careers.emailLink")}
             </a>
+            {t("careers.noRoleSuffix")}
           </p>
         </motion.div>
       </div>

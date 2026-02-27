@@ -1,10 +1,14 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import dish1 from "@/assets/dish-1.jpg";
+import dish2 from "@/assets/dish-2.jpg";
+import dish3 from "@/assets/dish-3.jpg";
 
 type MenuItem = { name: string; desc: string; price: string };
 
 const categoryKeys = ["biryani", "curry", "setMenu", "kebab", "beverage"] as const;
+const dishImages = [dish1, dish2, dish3];
 
 const MenuSection = () => {
   const { t } = useTranslation();
@@ -20,7 +24,7 @@ const MenuSection = () => {
 
   return (
     <section id="menu" className="py-12 md:py-16 px-6 md:px-16 bg-secondary/30">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -54,7 +58,7 @@ const MenuSection = () => {
           ))}
         </div>
 
-        {/* Menu items */}
+        {/* Menu items - card grid */}
         <AnimatePresence mode="wait">
           <motion.div
             key={active}
@@ -62,27 +66,37 @@ const MenuSection = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.35 }}
-            className="grid gap-0 divide-y divide-border"
+            className="grid md:grid-cols-3 gap-8"
           >
             {activeCategory.items.map((item, i) => (
-              <div
+              <motion.div
                 key={i}
-                className="flex items-start justify-between gap-4 py-5 group"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="group"
               >
-                <div className="flex-1 min-w-0">
-                  <h3 className="font-display text-lg md:text-xl group-hover:text-primary transition-colors">
-                    {item.name}
-                  </h3>
-                  {item.desc && (
-                    <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
-                      {item.desc}
-                    </p>
-                  )}
+                <div className="overflow-hidden mb-5">
+                  <img
+                    src={dishImages[i % dishImages.length]}
+                    alt={item.name}
+                    className="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
                 </div>
-                <span className="text-primary font-display text-lg md:text-xl shrink-0 pt-0.5">
-                  {item.price}
-                </span>
-              </div>
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="font-display text-xl mb-2">{item.name}</h3>
+                    {item.desc && (
+                      <p className="text-muted-foreground text-sm leading-relaxed">
+                        {item.desc}
+                      </p>
+                    )}
+                  </div>
+                  <span className="text-primary font-display text-xl shrink-0">
+                    {item.price}
+                  </span>
+                </div>
+              </motion.div>
             ))}
           </motion.div>
         </AnimatePresence>

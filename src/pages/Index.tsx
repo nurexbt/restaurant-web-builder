@@ -8,8 +8,8 @@ const Index = () => {
   return (
     <main className="bg-background text-foreground">
       <HeroSection />
-      <AboutSection />
       <MenuSection />
+      <AboutSection />
       <ReservationSection />
       <FooterSection />
     </main>

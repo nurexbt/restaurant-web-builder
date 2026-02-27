@@ -75,6 +75,10 @@
   "location": {
     "subtitle": "অবস্থান",
     "title": "আমাদের",
-    "titleAccent": "খুঁজুন"
+    "titleAccent": "খুঁজুন",
+    "cardTitle": "আমাদের অবস্থান",
+    "phone": "ফোন",
+    "availability": "সময়সূচী",
+    "hours": "প্রতিদিন সকাল ১১টা থেকে রাত ১১টা"
   }
 }

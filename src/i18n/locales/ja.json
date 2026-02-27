@@ -75,6 +75,10 @@
   "location": {
     "subtitle": "アクセス",
     "title": "お店を",
-    "titleAccent": "見つける"
+    "titleAccent": "見つける",
+    "cardTitle": "所在地",
+    "phone": "電話",
+    "availability": "営業時間",
+    "hours": "毎日 11:00〜23:00"
   }
 }

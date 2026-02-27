@@ -14,14 +14,58 @@
   },
   "menu": {
     "subtitle": "Curated Selection",
-    "title": "Signature",
-    "titleAccent": "Dishes",
-    "dish1Name": "Saffron Tagliatelle",
-    "dish1Desc": "Hand-rolled pasta, aged parmesan, truffle butter, micro herbs",
-    "dish2Name": "Wagyu Tenderloin",
-    "dish2Desc": "A5 wagyu, seasonal root vegetables, red wine reduction",
-    "dish3Name": "Golden Ganache",
-    "dish3Desc": "Valrhona chocolate, salted caramel, edible gold leaf"
+    "title": "Our",
+    "titleAccent": "Menu",
+    "biryani": "Biryani",
+    "curry": "Curry",
+    "setMenu": "Set Menu",
+    "kebab": "Kebab",
+    "beverage": "Beverages",
+    "biryaniItems": [
+      { "name": "Chicken Biryani", "desc": "Popular Southeast Asian rice dish [with Raita]", "price": "¥990" },
+      { "name": "Mix Biryani", "desc": "Vegetables & Chicken [with Raita]", "price": "¥1,150" },
+      { "name": "Veg Biryani", "desc": "Popular Southeast Asian rice dish [with Raita]", "price": "¥900" },
+      { "name": "Mutton Biryani", "desc": "Popular Southeast Asian rice dish", "price": "¥1,300" },
+      { "name": "Chicken Biryani Set", "desc": "[with Raita]", "price": "¥1,090" },
+      { "name": "Mix Biryani Set", "desc": "[with Raita]", "price": "¥1,300" }
+    ],
+    "curryItems": [
+      { "name": "Vegetable Curry", "desc": "", "price": "¥800" },
+      { "name": "Palak Curry", "desc": "", "price": "¥750" },
+      { "name": "Butter Curry", "desc": "", "price": "¥850" },
+      { "name": "Shrimp Curry", "desc": "", "price": "¥800" },
+      { "name": "Beef Curry", "desc": "", "price": "¥950" },
+      { "name": "Dal Curry", "desc": "", "price": "¥750" }
+    ],
+    "setMenuItems": [
+      { "name": "Vegetable Samosa", "desc": "2 pieces, with sauce", "price": "¥500" },
+      { "name": "Baigan Pakora", "desc": "2 pieces, with sauce", "price": "¥400" },
+      { "name": "Chapati", "desc": "", "price": "¥300" },
+      { "name": "Vegetable Curry Set", "desc": "With 2 chapatis", "price": "¥1,300" },
+      { "name": "Palak Curry Set", "desc": "With 2 chapatis", "price": "¥1,250" },
+      { "name": "Butter Curry Set", "desc": "With 2 chapatis", "price": "¥1,350" },
+      { "name": "Shrimp Curry Set", "desc": "With 2 chapatis", "price": "¥1,300" },
+      { "name": "Beef Curry Set", "desc": "With 2 chapatis", "price": "¥1,500" },
+      { "name": "Dal Curry Set", "desc": "With 2 chapatis", "price": "¥1,250" }
+    ],
+    "kebabItems": [
+      { "name": "Kebab Wrap R", "desc": "Chicken and cabbage wrapped in tortilla", "price": "¥700" },
+      { "name": "Kebab Wrap L", "desc": "Chicken and cabbage wrapped in tortilla", "price": "¥900" },
+      { "name": "Kebab Sand R", "desc": "Chicken and cabbage in pita bread", "price": "¥600" },
+      { "name": "Kebab Sand L", "desc": "Chicken and cabbage in pita bread", "price": "¥800" },
+      { "name": "Kebab Don R", "desc": "Chicken and cabbage over rice", "price": "¥700" },
+      { "name": "Kebab Don L", "desc": "Chicken and cabbage over rice", "price": "¥900" },
+      { "name": "Otsumami", "desc": "Perfect appetizer snack", "price": "¥800" }
+    ],
+    "beverageItems": [
+      { "name": "Cola", "desc": "", "price": "¥200" },
+      { "name": "Plain Lassi", "desc": "", "price": "¥300" },
+      { "name": "Banana Lassi", "desc": "", "price": "¥400" },
+      { "name": "Mango Lassi", "desc": "", "price": "¥350" },
+      { "name": "Milk", "desc": "", "price": "¥250" },
+      { "name": "Iced", "desc": "", "price": "¥300" },
+      { "name": "Masala Tea", "desc": "", "price": "¥300" }
+    ]
   },
   "about": {
     "subtitle": "Our Story",

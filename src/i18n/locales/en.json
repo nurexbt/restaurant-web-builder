@@ -75,6 +75,10 @@
   "location": {
     "subtitle": "Location",
     "title": "Find",
-    "titleAccent": "Us"
+    "titleAccent": "Us",
+    "cardTitle": "Our Location",
+    "phone": "Phone",
+    "availability": "Availability",
+    "hours": "Everyday 11AM to 11PM"
   }
 }

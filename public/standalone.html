@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -40,12 +40,14 @@
     .tab-inactive:hover { border-color: hsl(0 72% 45% / 0.5); color: hsl(0 0% 10%); }
     .menu-card img { transition: transform 0.7s; }
     .menu-card:hover img { transform: scale(1.05); }
-    /* Simple fade-in animation */
     @keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
     .animate-fade-up { animation: fadeUp 0.8s ease-out forwards; }
     .delay-1 { animation-delay: 0.2s; opacity: 0; }
     .delay-2 { animation-delay: 0.4s; opacity: 0; }
     .delay-3 { animation-delay: 0.6s; opacity: 0; }
+    .lang-btn { transition: color 0.2s; }
+    .lang-btn:hover { color: hsl(0 72% 45%); }
+    .lang-btn.active { color: hsl(0 72% 45%); font-weight: 600; }
   </style>
 </head>
 <body class="bg-white">
@@ -60,25 +62,27 @@
     <!-- Nav -->
     <nav class="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-6 md:px-16 py-6">
       <span class="font-display text-2xl tracking-wider text-primary">AURUM</span>
-      <div class="hidden md:flex items-center gap-8 font-body text-sm tracking-widest uppercase text-white">
-        <a href="#about" class="hover:text-primary transition-colors">About</a>
-        <a href="#menu" class="hover:text-primary transition-colors">Menu</a>
-        <a href="#reservation" class="hover:text-primary transition-colors">Reserve</a>
-        <a href="#contact" class="bg-primary text-white px-4 py-2 rounded hover:opacity-90 transition-colors">Contact</a>
+      <div class="flex items-center gap-6">
+        <!-- Language Switcher -->
+        <div class="flex items-center gap-1 text-xs font-body" id="lang-switcher"></div>
+        <div class="hidden md:flex items-center gap-8 font-body text-sm tracking-widest uppercase text-white">
+          <a href="#about" class="hover:text-primary transition-colors" data-i18n="nav.about"></a>
+          <a href="#menu" class="hover:text-primary transition-colors" data-i18n="nav.menu"></a>
+          <a href="#reservation" class="hover:text-primary transition-colors" data-i18n="nav.reserve"></a>
+          <a href="#contact" class="bg-primary text-white px-4 py-2 rounded hover:opacity-90 transition-colors" data-i18n="nav.contact"></a>
+        </div>
       </div>
     </nav>
 
     <!-- Hero content -->
     <div class="relative z-10 text-center px-6 max-w-3xl">
-      <p class="animate-fade-up text-primary font-body text-sm tracking-[0.3em] uppercase mb-6">Fine Dining Experience</p>
+      <p class="animate-fade-up text-primary font-body text-sm tracking-[0.3em] uppercase mb-6" data-i18n="hero.subtitle"></p>
       <h1 class="animate-fade-up delay-1 font-display text-5xl md:text-7xl lg:text-8xl font-medium leading-tight mb-8 text-white drop-shadow-lg">
-        Where Every Dish<br><span class="text-gold-gradient italic">Tells a Story</span>
+        <span data-i18n="hero.title1"></span><br><span class="text-gold-gradient italic" data-i18n="hero.title2"></span>
       </h1>
-      <p class="animate-fade-up delay-2 text-white/80 font-body text-lg mb-10 max-w-xl mx-auto drop-shadow">
-        An intimate culinary journey crafted with passion, seasonal ingredients, and timeless technique.
-      </p>
+      <p class="animate-fade-up delay-2 text-white/80 font-body text-lg mb-10 max-w-xl mx-auto drop-shadow" data-i18n="hero.description"></p>
       <div class="animate-fade-up delay-3">
-        <a href="#reservation" class="inline-block bg-primary text-white tracking-widest uppercase text-sm px-10 py-4 rounded hover:opacity-90 transition">Reserve a Table</a>
+        <a href="#reservation" class="inline-block bg-primary text-white tracking-widest uppercase text-sm px-10 py-4 rounded hover:opacity-90 transition" data-i18n="hero.cta"></a>
       </div>
     </div>
     <div class="absolute bottom-10 left-1/2 -translate-x-1/2">
@@ -90,14 +94,12 @@
   <section id="menu" class="py-16 px-6 md:px-16 bg-secondary/30">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-12">
-        <p class="text-primary font-body text-sm tracking-[0.3em] uppercase mb-4">Curated Selection</p>
-        <h2 class="font-display text-4xl md:text-5xl font-medium">Our <span class="italic text-gold-gradient">Menu</span></h2>
+        <p class="text-primary font-body text-sm tracking-[0.3em] uppercase mb-4" data-i18n="menu.subtitle"></p>
+        <h2 class="font-display text-4xl md:text-5xl font-medium">
+          <span data-i18n="menu.title"></span> <span class="italic text-gold-gradient" data-i18n="menu.titleAccent"></span>
+        </h2>
       </div>
-
-      <!-- Tabs -->
       <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-10" id="menu-tabs"></div>
-
-      <!-- Menu grid -->
       <div class="grid md:grid-cols-3 gap-8" id="menu-grid"></div>
     </div>
   </section>
@@ -110,22 +112,22 @@
         <div class="absolute inset-0 border border-primary/20 translate-x-4 translate-y-4 -z-10"></div>
       </div>
       <div>
-        <p class="text-primary font-body text-sm tracking-[0.3em] uppercase mb-4">Our Story</p>
+        <p class="text-primary font-body text-sm tracking-[0.3em] uppercase mb-4" data-i18n="about.subtitle"></p>
         <h2 class="font-display text-4xl md:text-5xl font-medium mb-8 leading-tight">
-          A Tradition of<br><span class="italic text-gold-gradient">Excellence</span>
+          <span data-i18n="about.title1"></span><br><span class="italic text-gold-gradient" data-i18n="about.titleAccent"></span>
         </h2>
         <div class="space-y-5 text-muted-foreground font-body leading-relaxed">
-          <p>Nestled in the heart of the city, Aurum has been a beacon of culinary artistry since 2010. Our philosophy is simple — honor the ingredient, respect the craft, and create moments that linger.</p>
-          <p>Chef Elena Marchetti brings over two decades of experience from kitchens across Italy, France, and Japan, weaving global influences into every thoughtfully composed plate.</p>
+          <p data-i18n="about.p1"></p>
+          <p data-i18n="about.p2"></p>
         </div>
         <div class="mt-10 flex gap-12">
           <div>
-            <p class="font-display text-3xl text-primary">15+</p>
-            <p class="text-muted-foreground text-sm mt-1">Years of Excellence</p>
+            <p class="font-display text-3xl text-primary" data-i18n="about.years"></p>
+            <p class="text-muted-foreground text-sm mt-1" data-i18n="about.yearsLabel"></p>
           </div>
           <div>
-            <p class="font-display text-3xl text-primary">★★</p>
-            <p class="text-muted-foreground text-sm mt-1">Michelin Stars</p>
+            <p class="font-display text-3xl text-primary" data-i18n="about.stars"></p>
+            <p class="text-muted-foreground text-sm mt-1" data-i18n="about.starsLabel"></p>
           </div>
         </div>
       </div>
@@ -135,20 +137,22 @@
   <!-- ============ RESERVATION ============ -->
   <section id="reservation" class="py-16 px-6 md:px-16">
     <div class="max-w-2xl mx-auto text-center">
-      <p class="text-primary font-body text-sm tracking-[0.3em] uppercase mb-4">Book Your Table</p>
-      <h2 class="font-display text-4xl md:text-5xl font-medium mb-6">Make a <span class="italic text-gold-gradient">Reservation</span></h2>
-      <p class="text-muted-foreground mb-12">Join us for an unforgettable evening. We recommend booking at least 48 hours in advance.</p>
+      <p class="text-primary font-body text-sm tracking-[0.3em] uppercase mb-4" data-i18n="reservation.subtitle"></p>
+      <h2 class="font-display text-4xl md:text-5xl font-medium mb-6">
+        <span data-i18n="reservation.title"></span> <span class="italic text-gold-gradient" data-i18n="reservation.titleAccent"></span>
+      </h2>
+      <p class="text-muted-foreground mb-12" data-i18n="reservation.description"></p>
       <form class="space-y-4" onsubmit="event.preventDefault()">
         <div class="grid grid-cols-2 gap-4">
-          <input placeholder="Full Name" class="bg-secondary border border-gray-200 rounded px-4 py-3 font-body text-sm w-full focus:outline-none focus:border-primary" />
-          <input placeholder="Phone Number" class="bg-secondary border border-gray-200 rounded px-4 py-3 font-body text-sm w-full focus:outline-none focus:border-primary" />
+          <input id="input-name" class="bg-secondary border border-gray-200 rounded px-4 py-3 font-body text-sm w-full focus:outline-none focus:border-primary" />
+          <input id="input-phone" class="bg-secondary border border-gray-200 rounded px-4 py-3 font-body text-sm w-full focus:outline-none focus:border-primary" />
         </div>
         <div class="grid grid-cols-2 gap-4">
           <input type="date" class="bg-secondary border border-gray-200 rounded px-4 py-3 font-body text-sm w-full focus:outline-none focus:border-primary" />
           <input type="time" class="bg-secondary border border-gray-200 rounded px-4 py-3 font-body text-sm w-full focus:outline-none focus:border-primary" />
         </div>
-        <input placeholder="Number of Guests" class="bg-secondary border border-gray-200 rounded px-4 py-3 font-body text-sm w-full focus:outline-none focus:border-primary" />
-        <button class="w-full bg-primary text-white tracking-widest uppercase text-sm py-4 rounded mt-4 hover:opacity-90 transition">Reserve Now</button>
+        <input id="input-guests" class="bg-secondary border border-gray-200 rounded px-4 py-3 font-body text-sm w-full focus:outline-none focus:border-primary" />
+        <button class="w-full bg-primary text-white tracking-widest uppercase text-sm py-4 rounded mt-4 hover:opacity-90 transition" data-i18n="reservation.cta"></button>
       </form>
     </div>
   </section>
@@ -157,19 +161,21 @@
   <section id="location" class="py-16 px-6 md:px-16">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-12">
-        <p class="text-primary font-body text-sm tracking-[0.3em] uppercase mb-4">Location</p>
-        <h2 class="font-display text-4xl md:text-5xl font-medium">Find <span class="italic text-gold-gradient">Us</span></h2>
+        <p class="text-primary font-body text-sm tracking-[0.3em] uppercase mb-4" data-i18n="location.subtitle"></p>
+        <h2 class="font-display text-4xl md:text-5xl font-medium">
+          <span data-i18n="location.title"></span> <span class="italic text-gold-gradient" data-i18n="location.titleAccent"></span>
+        </h2>
       </div>
       <div class="relative w-full overflow-hidden rounded">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3243.196044413875!2d139.56363947622938!3d35.6228932331757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f1db8503541f%3A0xbdbe7c7b5fb5545c!2sTamagawa%20Kebab%20%26%20Biryani!5e0!3m2!1sen!2sbd!4v1772219254110!5m2!1sen!2sbd"
           width="100%" height="400" style="border:0" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Restaurant location"></iframe>
         <div class="absolute top-6 right-6 md:top-8 md:right-8 bg-white/95 backdrop-blur-sm border border-gray-200 rounded-lg p-6 shadow-xl max-w-xs z-10">
-          <h3 class="font-display text-lg text-primary mb-3">Our Location</h3>
+          <h3 class="font-display text-lg text-primary mb-3" data-i18n="location.cardTitle"></h3>
           <div class="space-y-2 text-muted-foreground text-sm font-body leading-relaxed">
             <p>レジデンスモリ 1F, 340 Noboritoshinmachi, Tama Ward, Kawasaki, Kanagawa 214-0013, Japan</p>
-            <p><span class="text-gray-800 font-medium">Phone:</span> <a href="tel:+81444557291" class="text-primary hover:underline">+81 44-455-7291</a></p>
-            <p><span class="text-gray-800 font-medium">Availability:</span> Everyday 11AM to 11PM</p>
+            <p><span class="text-gray-800 font-medium" data-i18n="location.phone"></span>: <a href="tel:+81444557291" class="text-primary hover:underline">+81 44-455-7291</a></p>
+            <p><span class="text-gray-800 font-medium" data-i18n="location.availability"></span>: <span data-i18n="location.hours"></span></p>
           </div>
         </div>
       </div>
@@ -180,41 +186,45 @@
   <section id="careers" class="py-16 px-6 md:px-16 bg-secondary/30">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16">
-        <p class="text-primary font-body text-sm tracking-[0.3em] uppercase mb-4">Join Our Team</p>
-        <h2 class="font-display text-4xl md:text-5xl font-medium">Find a <span class="italic text-gold-gradient">Career</span> at Aurum</h2>
-        <p class="text-muted-foreground font-body mt-6 max-w-xl mx-auto leading-relaxed">We're always looking for passionate individuals who share our dedication to culinary excellence and hospitality.</p>
+        <p class="text-primary font-body text-sm tracking-[0.3em] uppercase mb-4" data-i18n="careers.subtitle"></p>
+        <h2 class="font-display text-4xl md:text-5xl font-medium">
+          <span data-i18n="careers.title"></span> <span class="italic text-gold-gradient" data-i18n="careers.titleAccent"></span> <span data-i18n="careers.titleSuffix"></span>
+        </h2>
+        <p class="text-muted-foreground font-body mt-6 max-w-xl mx-auto leading-relaxed" data-i18n="careers.description"></p>
       </div>
       <div class="grid md:grid-cols-3 gap-8">
         <div class="border border-primary/10 p-8 hover:border-primary/30 transition-colors duration-500">
           <svg class="w-8 h-8 text-primary mb-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"/></svg>
           <div class="flex items-center gap-3 mb-3">
-            <h3 class="font-display text-xl">Sous Chef</h3>
-            <span class="text-xs tracking-wider uppercase text-muted-foreground border border-gray-300 px-2 py-0.5">Full-time</span>
+            <h3 class="font-display text-xl" data-i18n="careers.sousChef"></h3>
+            <span class="text-xs tracking-wider uppercase text-muted-foreground border border-gray-300 px-2 py-0.5" data-i18n="careers.fullTime"></span>
           </div>
-          <p class="text-muted-foreground text-sm leading-relaxed mb-6">Work alongside Chef Marchetti crafting seasonal menus with premium ingredients.</p>
-          <button class="text-primary font-body text-sm tracking-wider uppercase hover:underline underline-offset-4">Apply Now →</button>
+          <p class="text-muted-foreground text-sm leading-relaxed mb-6" data-i18n="careers.sousChefDesc"></p>
+          <button class="text-primary font-body text-sm tracking-wider uppercase hover:underline underline-offset-4" data-i18n="careers.applyNow"></button>
         </div>
         <div class="border border-primary/10 p-8 hover:border-primary/30 transition-colors duration-500">
           <svg class="w-8 h-8 text-primary mb-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0 1 12 15a9.065 9.065 0 0 0-6.23.693L5 14.5m14.8.8 1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0 1 12 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg>
           <div class="flex items-center gap-3 mb-3">
-            <h3 class="font-display text-xl">Sommelier</h3>
-            <span class="text-xs tracking-wider uppercase text-muted-foreground border border-gray-300 px-2 py-0.5">Full-time</span>
+            <h3 class="font-display text-xl" data-i18n="careers.sommelier"></h3>
+            <span class="text-xs tracking-wider uppercase text-muted-foreground border border-gray-300 px-2 py-0.5" data-i18n="careers.fullTime"></span>
           </div>
-          <p class="text-muted-foreground text-sm leading-relaxed mb-6">Curate our award-winning wine list and guide guests through exceptional pairings.</p>
-          <button class="text-primary font-body text-sm tracking-wider uppercase hover:underline underline-offset-4">Apply Now →</button>
+          <p class="text-muted-foreground text-sm leading-relaxed mb-6" data-i18n="careers.sommelierDesc"></p>
+          <button class="text-primary font-body text-sm tracking-wider uppercase hover:underline underline-offset-4" data-i18n="careers.applyNow"></button>
         </div>
         <div class="border border-primary/10 p-8 hover:border-primary/30 transition-colors duration-500">
           <svg class="w-8 h-8 text-primary mb-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z"/></svg>
           <div class="flex items-center gap-3 mb-3">
-            <h3 class="font-display text-xl">Front of House</h3>
-            <span class="text-xs tracking-wider uppercase text-muted-foreground border border-gray-300 px-2 py-0.5">Part-time</span>
+            <h3 class="font-display text-xl" data-i18n="careers.frontOfHouse"></h3>
+            <span class="text-xs tracking-wider uppercase text-muted-foreground border border-gray-300 px-2 py-0.5" data-i18n="careers.partTime"></span>
           </div>
-          <p class="text-muted-foreground text-sm leading-relaxed mb-6">Deliver memorable dining experiences with warmth and impeccable attention to detail.</p>
-          <button class="text-primary font-body text-sm tracking-wider uppercase hover:underline underline-offset-4">Apply Now →</button>
+          <p class="text-muted-foreground text-sm leading-relaxed mb-6" data-i18n="careers.frontOfHouseDesc"></p>
+          <button class="text-primary font-body text-sm tracking-wider uppercase hover:underline underline-offset-4" data-i18n="careers.applyNow"></button>
         </div>
       </div>
       <div class="text-center mt-12">
-        <p class="text-muted-foreground text-sm font-body">Don't see your role? Send your CV to <a href="mailto:careers@aurum.com" class="text-primary hover:underline underline-offset-4">careers@aurum.com</a></p>
+        <p class="text-muted-foreground text-sm font-body">
+          <span data-i18n="careers.noRole"></span> <a href="mailto:careers@aurum.com" class="text-primary hover:underline underline-offset-4" data-i18n="careers.emailLink"></a><span data-i18n="careers.noRoleSuffix"></span>
+        </p>
       </div>
     </div>
   </section>
@@ -224,18 +234,18 @@
     <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
       <div>
         <h3 class="font-display text-2xl text-primary mb-4">AURUM</h3>
-        <p class="text-muted-foreground text-sm leading-relaxed">An intimate fine dining experience celebrating the art of seasonal cuisine.</p>
+        <p class="text-muted-foreground text-sm leading-relaxed" data-i18n="footer.description"></p>
       </div>
       <div>
-        <h4 class="font-display text-lg mb-4">Hours</h4>
+        <h4 class="font-display text-lg mb-4" data-i18n="footer.hours"></h4>
         <div class="text-muted-foreground text-sm space-y-2">
-          <p>Tuesday – Saturday: 6:00 PM – 11:00 PM</p>
-          <p>Sunday Brunch: 11:00 AM – 3:00 PM</p>
-          <p>Monday: Closed</p>
+          <p data-i18n="footer.hoursTueSat"></p>
+          <p data-i18n="footer.hoursSun"></p>
+          <p data-i18n="footer.hoursMon"></p>
         </div>
       </div>
       <div>
-        <h4 class="font-display text-lg mb-4">Contact</h4>
+        <h4 class="font-display text-lg mb-4" data-i18n="footer.contact"></h4>
         <div class="text-muted-foreground text-sm space-y-2">
           <p>42 Goldleaf Avenue</p>
           <p>New York, NY 10012</p>
@@ -244,60 +254,191 @@
         </div>
       </div>
     </div>
-    <div class="max-w-6xl mx-auto mt-12 pt-8 border-t border-gray-200 text-center text-muted-foreground text-xs tracking-wider">
-      © 2026 Aurum. All rights reserved.
-    </div>
+    <div class="max-w-6xl mx-auto mt-12 pt-8 border-t border-gray-200 text-center text-muted-foreground text-xs tracking-wider" data-i18n="footer.copyright"></div>
   </footer>
 
-  <!-- ============ MENU JS ============ -->
+  <!-- ============ i18n + MENU JS ============ -->
   <script>
-    const menuData = {
-      biryani: { label: "Biryani", items: [
-        { name: "Chicken Biryani", desc: "Popular Southeast Asian rice dish [with Raita]", price: "¥990" },
-        { name: "Mix Biryani", desc: "Vegetables & Chicken [with Raita]", price: "¥1,150" },
-        { name: "Veg Biryani", desc: "Popular Southeast Asian rice dish [with Raita]", price: "¥900" },
-        { name: "Mutton Biryani", desc: "Popular Southeast Asian rice dish", price: "¥1,300" },
-        { name: "Chicken Biryani Set", desc: "[with Raita]", price: "¥1,090" },
-        { name: "Mix Biryani Set", desc: "[with Raita]", price: "¥1,300" }
-      ]},
-      curry: { label: "Curry", items: [
-        { name: "Vegetable Curry", desc: "", price: "¥800" },
-        { name: "Palak Curry", desc: "", price: "¥750" },
-        { name: "Butter Curry", desc: "", price: "¥850" },
-        { name: "Shrimp Curry", desc: "", price: "¥800" },
-        { name: "Beef Curry", desc: "", price: "¥950" },
-        { name: "Dal Curry", desc: "", price: "¥750" }
-      ]},
-      setMenu: { label: "Set Menu", items: [
-        { name: "Vegetable Samosa", desc: "2 pieces, with sauce", price: "¥500" },
-        { name: "Baigan Pakora", desc: "2 pieces, with sauce", price: "¥400" },
-        { name: "Chapati", desc: "", price: "¥300" },
-        { name: "Vegetable Curry Set", desc: "With 2 chapatis", price: "¥1,300" },
-        { name: "Palak Curry Set", desc: "With 2 chapatis", price: "¥1,250" },
-        { name: "Butter Curry Set", desc: "With 2 chapatis", price: "¥1,350" },
-        { name: "Shrimp Curry Set", desc: "With 2 chapatis", price: "¥1,300" },
-        { name: "Beef Curry Set", desc: "With 2 chapatis", price: "¥1,500" },
-        { name: "Dal Curry Set", desc: "With 2 chapatis", price: "¥1,250" }
-      ]},
-      kebab: { label: "Kebab", items: [
-        { name: "Kebab Wrap R", desc: "Chicken and cabbage wrapped in tortilla", price: "¥700" },
-        { name: "Kebab Wrap L", desc: "Chicken and cabbage wrapped in tortilla", price: "¥900" },
-        { name: "Kebab Sand R", desc: "Chicken and cabbage in pita bread", price: "¥600" },
-        { name: "Kebab Sand L", desc: "Chicken and cabbage in pita bread", price: "¥800" },
-        { name: "Kebab Don R", desc: "Chicken and cabbage over rice", price: "¥700" },
-        { name: "Kebab Don L", desc: "Chicken and cabbage over rice", price: "¥900" },
-        { name: "Otsumami", desc: "Perfect appetizer snack", price: "¥800" }
-      ]},
-      beverage: { label: "Beverages", items: [
-        { name: "Cola", desc: "", price: "¥200" },
-        { name: "Plain Lassi", desc: "", price: "¥300" },
-        { name: "Banana Lassi", desc: "", price: "¥400" },
-        { name: "Mango Lassi", desc: "", price: "¥350" },
-        { name: "Milk", desc: "", price: "¥250" },
-        { name: "Iced", desc: "", price: "¥300" },
-        { name: "Masala Tea", desc: "", price: "¥300" }
-      ]}
+    // ---- TRANSLATIONS (same as React app) ----
+    const translations = {
+      ja: {
+        nav: { about: "私たちについて", menu: "メニュー", reserve: "予約", contact: "お問い合わせ" },
+        hero: { subtitle: "至高のダイニング体験", title1: "すべての料理が", title2: "物語を語る", description: "情熱、旬の食材、そして時を超えた技術で紡ぐ、親密な美食の旅。", cta: "テーブルを予約する" },
+        menu: { subtitle: "厳選セレクション", title: "お", titleAccent: "メニュー", biryani: "ビリヤニ", curry: "カレー", setMenu: "セットメニュー", kebab: "ケバブ", beverage: "ドリンク",
+          biryaniItems: [
+            { name: "チキン ビリヤニ", desc: "東南アジアで人気の炊き込みご飯【ライタ付き】", price: "¥990" },
+            { name: "ミックス ビリヤニ", desc: "野菜&チキン【ライタ付き】", price: "¥1,150" },
+            { name: "ベジ ビリヤニ", desc: "東南アジアで人気の炊き込みご飯【ライタ付き】", price: "¥900" },
+            { name: "マトン ビリヤニ", desc: "東南アジアで人気の炊き込みご飯", price: "¥1,300" },
+            { name: "チキン ビリヤニ セット", desc: "【ライタ付き】", price: "¥1,090" },
+            { name: "ミックス ビリヤニ セット", desc: "【ライタ付き】", price: "¥1,300" }
+          ],
+          curryItems: [
+            { name: "野菜カレー", desc: "", price: "¥800" },
+            { name: "パラックカレー", desc: "", price: "¥750" },
+            { name: "バターカレー", desc: "", price: "¥850" },
+            { name: "海老カレー", desc: "", price: "¥800" },
+            { name: "ビーフカレー", desc: "", price: "¥950" },
+            { name: "ダールカレー", desc: "", price: "¥750" }
+          ],
+          setMenuItems: [
+            { name: "ベジタブル サモサ", desc: "2個入り, ソース付き", price: "¥500" },
+            { name: "バイガン パコラ", desc: "2個入り, ソース付き", price: "¥400" },
+            { name: "チャパティ", desc: "", price: "¥300" },
+            { name: "野菜カレー セット", desc: "チャパティ2枚付き", price: "¥1,300" },
+            { name: "パラックカレー セット", desc: "チャパティ2枚付き", price: "¥1,250" },
+            { name: "バターカレー セット", desc: "チャパティ2枚付き", price: "¥1,350" },
+            { name: "海老カレー セット", desc: "チャパティ2枚付き", price: "¥1,300" },
+            { name: "ビーフカレー セット", desc: "チャパティ2枚付き", price: "¥1,500" },
+            { name: "ダールカレー セット", desc: "チャパティ2枚付き", price: "¥1,250" }
+          ],
+          kebabItems: [
+            { name: "ケバブ ラップ R", desc: "たっぷりの鶏肉とキャベツをトルティーヤで包んだケバブラップ", price: "¥700" },
+            { name: "ケバブ ラップ L", desc: "たっぷりの鶏肉とキャベツをトルティーヤで包んだケバブラップ", price: "¥900" },
+            { name: "ケバブ サンド R", desc: "ピタパンの中にたっぷりの鶏肉とキャベツが入ったケバブサンド", price: "¥600" },
+            { name: "ケバブ サンド L", desc: "ピタパンの中にたっぷりの鶏肉とキャベツが入ったケバブサンド", price: "¥800" },
+            { name: "ケバブ 丼 R", desc: "ご飯の上にキャベツと鶏肉を乗せたケバブ丼", price: "¥700" },
+            { name: "ケバブ 丼 L", desc: "ご飯の上にキャベツと鶏肉を乗せたケバブ丼", price: "¥900" },
+            { name: "おつまみ", desc: "最高のおつまみになること間違いなし", price: "¥800" }
+          ],
+          beverageItems: [
+            { name: "コーラ", desc: "", price: "¥200" },
+            { name: "プレーン ラッシー", desc: "", price: "¥300" },
+            { name: "バナナ ラッシー", desc: "", price: "¥400" },
+            { name: "マンゴー ラッシー", desc: "", price: "¥350" },
+            { name: "ミルク", desc: "", price: "¥250" },
+            { name: "アイス", desc: "", price: "¥300" },
+            { name: "マサラティー", desc: "", price: "¥300" }
+          ]
+        },
+        about: { subtitle: "私たちの物語", title1: "卓越の", titleAccent: "伝統", p1: "街の中心に佇むAurumは、2010年以来、料理芸術の灯台となっています。私たちの哲学はシンプルです — 食材を敬い、技を尊び、心に残る瞬間を創ること。", p2: "シェフのエレナ・マルケッティは、イタリア、フランス、日本の厨房で20年以上の経験を持ち、一皿一皿に世界の影響を織り込んでいます。", years: "15+", yearsLabel: "卓越の歴史", stars: "★★", starsLabel: "ミシュランの星" },
+        reservation: { subtitle: "テーブルを予約", title: "ご", titleAccent: "予約", description: "忘れられない夜をお過ごしください。48時間前までのご予約をお勧めいたします。", name: "お名前", phone: "電話番号", guests: "ゲスト数", cta: "今すぐ予約" },
+        careers: { subtitle: "チームに参加", title: "Aurumで", titleAccent: "キャリア", titleSuffix: "を見つける", description: "料理の卓越性とおもてなしに情熱を共有する方を常に探しています。", sousChef: "副料理長", sommelier: "ソムリエ", frontOfHouse: "フロント・オブ・ハウス", fullTime: "フルタイム", partTime: "パートタイム", sousChefDesc: "マルケッティシェフとともに、厳選された食材で季節のメニューを創作します。", sommelierDesc: "受賞歴のあるワインリストを監修し、ゲストに卓越したペアリングをご案内します。", frontOfHouseDesc: "温かさと細やかな心配りで、記憶に残るダイニング体験をお届けします。", applyNow: "応募する →", noRole: "ご希望のポジションが見つかりませんか？履歴書を", emailLink: "careers@aurum.com", noRoleSuffix: "までお送りください" },
+        footer: { description: "季節の料理の芸術を称える、親密なファインダイニング体験。", hours: "営業時間", hoursTueSat: "火曜日〜土曜日：午後6時〜午後11時", hoursSun: "日曜ブランチ：午前11時〜午後3時", hoursMon: "月曜日：定休日", contact: "お問い合わせ", copyright: "© 2026 Aurum. All rights reserved." },
+        location: { subtitle: "アクセス", title: "お店を", titleAccent: "見つける", cardTitle: "所在地", phone: "電話", availability: "営業時間", hours: "毎日 11:00〜23:00" }
+      },
+      en: {
+        nav: { about: "About", menu: "Menu", reserve: "Reserve", contact: "Contact" },
+        hero: { subtitle: "Fine Dining Experience", title1: "Where Every Dish", title2: "Tells a Story", description: "An intimate culinary journey crafted with passion, seasonal ingredients, and timeless technique.", cta: "Reserve a Table" },
+        menu: { subtitle: "Curated Selection", title: "Our", titleAccent: "Menu", biryani: "Biryani", curry: "Curry", setMenu: "Set Menu", kebab: "Kebab", beverage: "Beverages",
+          biryaniItems: [
+            { name: "Chicken Biryani", desc: "Popular Southeast Asian rice dish [with Raita]", price: "¥990" },
+            { name: "Mix Biryani", desc: "Vegetables & Chicken [with Raita]", price: "¥1,150" },
+            { name: "Veg Biryani", desc: "Popular Southeast Asian rice dish [with Raita]", price: "¥900" },
+            { name: "Mutton Biryani", desc: "Popular Southeast Asian rice dish", price: "¥1,300" },
+            { name: "Chicken Biryani Set", desc: "[with Raita]", price: "¥1,090" },
+            { name: "Mix Biryani Set", desc: "[with Raita]", price: "¥1,300" }
+          ],
+          curryItems: [
+            { name: "Vegetable Curry", desc: "", price: "¥800" },
+            { name: "Palak Curry", desc: "", price: "¥750" },
+            { name: "Butter Curry", desc: "", price: "¥850" },
+            { name: "Shrimp Curry", desc: "", price: "¥800" },
+            { name: "Beef Curry", desc: "", price: "¥950" },
+            { name: "Dal Curry", desc: "", price: "¥750" }
+          ],
+          setMenuItems: [
+            { name: "Vegetable Samosa", desc: "2 pieces, with sauce", price: "¥500" },
+            { name: "Baigan Pakora", desc: "2 pieces, with sauce", price: "¥400" },
+            { name: "Chapati", desc: "", price: "¥300" },
+            { name: "Vegetable Curry Set", desc: "With 2 chapatis", price: "¥1,300" },
+            { name: "Palak Curry Set", desc: "With 2 chapatis", price: "¥1,250" },
+            { name: "Butter Curry Set", desc: "With 2 chapatis", price: "¥1,350" },
+            { name: "Shrimp Curry Set", desc: "With 2 chapatis", price: "¥1,300" },
+            { name: "Beef Curry Set", desc: "With 2 chapatis", price: "¥1,500" },
+            { name: "Dal Curry Set", desc: "With 2 chapatis", price: "¥1,250" }
+          ],
+          kebabItems: [
+            { name: "Kebab Wrap R", desc: "Chicken and cabbage wrapped in tortilla", price: "¥700" },
+            { name: "Kebab Wrap L", desc: "Chicken and cabbage wrapped in tortilla", price: "¥900" },
+            { name: "Kebab Sand R", desc: "Chicken and cabbage in pita bread", price: "¥600" },
+            { name: "Kebab Sand L", desc: "Chicken and cabbage in pita bread", price: "¥800" },
+            { name: "Kebab Don R", desc: "Chicken and cabbage over rice", price: "¥700" },
+            { name: "Kebab Don L", desc: "Chicken and cabbage over rice", price: "¥900" },
+            { name: "Otsumami", desc: "Perfect appetizer snack", price: "¥800" }
+          ],
+          beverageItems: [
+            { name: "Cola", desc: "", price: "¥200" },
+            { name: "Plain Lassi", desc: "", price: "¥300" },
+            { name: "Banana Lassi", desc: "", price: "¥400" },
+            { name: "Mango Lassi", desc: "", price: "¥350" },
+            { name: "Milk", desc: "", price: "¥250" },
+            { name: "Iced", desc: "", price: "¥300" },
+            { name: "Masala Tea", desc: "", price: "¥300" }
+          ]
+        },
+        about: { subtitle: "Our Story", title1: "A Tradition of", titleAccent: "Excellence", p1: "Nestled in the heart of the city, Aurum has been a beacon of culinary artistry since 2010. Our philosophy is simple — honor the ingredient, respect the craft, and create moments that linger.", p2: "Chef Elena Marchetti brings over two decades of experience from kitchens across Italy, France, and Japan, weaving global influences into every thoughtfully composed plate.", years: "15+", yearsLabel: "Years of Excellence", stars: "★★", starsLabel: "Michelin Stars" },
+        reservation: { subtitle: "Book Your Table", title: "Make a", titleAccent: "Reservation", description: "Join us for an unforgettable evening. We recommend booking at least 48 hours in advance.", name: "Full Name", phone: "Phone Number", guests: "Number of Guests", cta: "Reserve Now" },
+        careers: { subtitle: "Join Our Team", title: "Find a", titleAccent: "Career", titleSuffix: "at Aurum", description: "We're always looking for passionate individuals who share our dedication to culinary excellence and hospitality.", sousChef: "Sous Chef", sommelier: "Sommelier", frontOfHouse: "Front of House", fullTime: "Full-time", partTime: "Part-time", sousChefDesc: "Work alongside Chef Marchetti crafting seasonal menus with premium ingredients.", sommelierDesc: "Curate our award-winning wine list and guide guests through exceptional pairings.", frontOfHouseDesc: "Deliver memorable dining experiences with warmth and impeccable attention to detail.", applyNow: "Apply Now →", noRole: "Don't see your role? Send your CV to", emailLink: "careers@aurum.com", noRoleSuffix: "" },
+        footer: { description: "An intimate fine dining experience celebrating the art of seasonal cuisine.", hours: "Hours", hoursTueSat: "Tuesday – Saturday: 6:00 PM – 11:00 PM", hoursSun: "Sunday Brunch: 11:00 AM – 3:00 PM", hoursMon: "Monday: Closed", contact: "Contact", copyright: "© 2026 Aurum. All rights reserved." },
+        location: { subtitle: "Location", title: "Find", titleAccent: "Us", cardTitle: "Our Location", phone: "Phone", availability: "Availability", hours: "Everyday 11AM to 11PM" }
+      },
+      bn: {
+        nav: { about: "আমাদের সম্পর্কে", menu: "মেনু", reserve: "রিজার্ভ", contact: "যোগাযোগ" },
+        hero: { subtitle: "ফাইন ডাইনিং অভিজ্ঞতা", title1: "যেখানে প্রতিটি খাবার", title2: "একটি গল্প বলে", description: "আবেগ, মৌসুমী উপাদান এবং চিরকালীন কৌশলে তৈরি একটি অন্তরঙ্গ রন্ধনসম্পর্কীয় যাত্রা।", cta: "টেবিল রিজার্ভ করুন" },
+        menu: { subtitle: "বাছাই করা সংগ্রহ", title: "আমাদের", titleAccent: "মেনু", biryani: "বিরিয়ানি", curry: "কারি", setMenu: "সেট মেনু", kebab: "কেবাব", beverage: "পানীয়",
+          biryaniItems: [
+            { name: "চিকেন বিরিয়ানি", desc: "জনপ্রিয় দক্ষিণ-পূর্ব এশীয় ভাত [রায়তা সহ]", price: "¥990" },
+            { name: "মিক্স বিরিয়ানি", desc: "সবজি ও চিকেন [রায়তা সহ]", price: "¥1,150" },
+            { name: "ভেজ বিরিয়ানি", desc: "জনপ্রিয় দক্ষিণ-পূর্ব এশীয় ভাত [রায়তা সহ]", price: "¥900" },
+            { name: "মাটন বিরিয়ানি", desc: "জনপ্রিয় দক্ষিণ-পূর্ব এশীয় ভাত", price: "¥1,300" },
+            { name: "চিকেন বিরিয়ানি সেট", desc: "[রায়তা সহ]", price: "¥1,090" },
+            { name: "মিক্স বিরিয়ানি সেট", desc: "[রায়তা সহ]", price: "¥1,300" }
+          ],
+          curryItems: [
+            { name: "সবজি কারি", desc: "", price: "¥800" },
+            { name: "পালক কারি", desc: "", price: "¥750" },
+            { name: "বাটার কারি", desc: "", price: "¥850" },
+            { name: "চিংড়ি কারি", desc: "", price: "¥800" },
+            { name: "বিফ কারি", desc: "", price: "¥950" },
+            { name: "ডাল কারি", desc: "", price: "¥750" }
+          ],
+          setMenuItems: [
+            { name: "ভেজিটেবল সমোসা", desc: "২টি, সস সহ", price: "¥500" },
+            { name: "বেগুন পাকোড়া", desc: "২টি, সস সহ", price: "¥400" },
+            { name: "চাপাতি", desc: "", price: "¥300" },
+            { name: "সবজি কারি সেট", desc: "২টি চাপাতি সহ", price: "¥1,300" },
+            { name: "পালক কারি সেট", desc: "২টি চাপাতি সহ", price: "¥1,250" },
+            { name: "বাটার কারি সেট", desc: "২টি চাপাতি সহ", price: "¥1,350" },
+            { name: "চিংড়ি কারি সেট", desc: "২টি চাপাতি সহ", price: "¥1,300" },
+            { name: "বিফ কারি সেট", desc: "২টি চাপাতি সহ", price: "¥1,500" },
+            { name: "ডাল কারি সেট", desc: "২টি চাপাতি সহ", price: "¥1,250" }
+          ],
+          kebabItems: [
+            { name: "কেবাব র‍্যাপ R", desc: "চিকেন ও বাঁধাকপি টর্টিলায় মোড়ানো", price: "¥700" },
+            { name: "কেবাব র‍্যাপ L", desc: "চিকেন ও বাঁধাকপি টর্টিলায় মোড়ানো", price: "¥900" },
+            { name: "কেবাব স্যান্ড R", desc: "পিটা রুটিতে চিকেন ও বাঁধাকপি", price: "¥600" },
+            { name: "কেবাব স্যান্ড L", desc: "পিটা রুটিতে চিকেন ও বাঁধাকপি", price: "¥800" },
+            { name: "কেবাব ডন R", desc: "ভাতের উপর চিকেন ও বাঁধাকপি", price: "¥700" },
+            { name: "কেবাব ডন L", desc: "ভাতের উপর চিকেন ও বাঁধাকপি", price: "¥900" },
+            { name: "ওৎসুমামি", desc: "দারুণ অ্যাপেটাইজার", price: "¥800" }
+          ],
+          beverageItems: [
+            { name: "কোলা", desc: "", price: "¥200" },
+            { name: "প্লেইন লাচ্ছি", desc: "", price: "¥300" },
+            { name: "কলা লাচ্ছি", desc: "", price: "¥400" },
+            { name: "আম লাচ্ছি", desc: "", price: "¥350" },
+            { name: "দুধ", desc: "", price: "¥250" },
+            { name: "আইস", desc: "", price: "¥300" },
+            { name: "মসলা চা", desc: "", price: "¥300" }
+          ]
+        },
+        about: { subtitle: "আমাদের গল্প", title1: "শ্রেষ্ঠত্বের", titleAccent: "ঐতিহ্য", p1: "শহরের হৃদয়ে অবস্থিত, Aurum ২০১০ সাল থেকে রন্ধন শিল্পের আলোকবর্তিকা। আমাদের দর্শন সহজ — উপাদানকে সম্মান করুন, কারিগরিকে শ্রদ্ধা করুন এবং স্মরণীয় মুহূর্ত তৈরি করুন।", p2: "শেফ এলেনা মার্কেত্তি ইতালি, ফ্রান্স এবং জাপানের রান্নাঘর থেকে দুই দশকেরও বেশি অভিজ্ঞতা নিয়ে এসেছেন, প্রতিটি চিন্তাশীল প্লেটে বিশ্বব্যাপী প্রভাব বুনেছেন।", years: "১৫+", yearsLabel: "শ্রেষ্ঠত্বের বছর", stars: "★★", starsLabel: "মিশেলিন স্টার" },
+        reservation: { subtitle: "টেবিল বুক করুন", title: "একটি", titleAccent: "রিজার্ভেশন", description: "একটি অবিস্মরণীয় সন্ধ্যার জন্য আমাদের সাথে যোগ দিন। আমরা কমপক্ষে ৪৮ ঘন্টা আগে বুকিং করার পরামর্শ দিই।", name: "পুরো নাম", phone: "ফোন নম্বর", guests: "অতিথি সংখ্যা", cta: "এখনই রিজার্ভ করুন" },
+        careers: { subtitle: "আমাদের দলে যোগ দিন", title: "Aurum-এ", titleAccent: "ক্যারিয়ার", titleSuffix: "খুঁজুন", description: "আমরা সবসময় এমন উৎসাহী ব্যক্তিদের খুঁজছি যারা রন্ধন শ্রেষ্ঠত্ব এবং আতিথেয়তার প্রতি আমাদের নিবেদন ভাগ করে নেন।", sousChef: "সু শেফ", sommelier: "সোমেলিয়ার", frontOfHouse: "ফ্রন্ট অফ হাউস", fullTime: "পূর্ণকালীন", partTime: "খণ্ডকালীন", sousChefDesc: "প্রিমিয়াম উপাদান দিয়ে মৌসুমী মেনু তৈরিতে শেফ মার্কেত্তির সাথে কাজ করুন।", sommelierDesc: "আমাদের পুরস্কারপ্রাপ্ত ওয়াইন তালিকা তৈরি করুন এবং অতিথিদের ব্যতিক্রমী পেয়ারিং-এ গাইড করুন।", frontOfHouseDesc: "উষ্ণতা এবং নিখুঁত মনোযোগ দিয়ে স্মরণীয় ডাইনিং অভিজ্ঞতা প্রদান করুন।", applyNow: "এখনই আবেদন করুন →", noRole: "আপনার পদ দেখতে পাচ্ছেন না? আপনার CV পাঠান", emailLink: "careers@aurum.com", noRoleSuffix: "-এ" },
+        footer: { description: "মৌসুমী রন্ধনশিল্পের শিল্পকে উদযাপন করে একটি অন্তরঙ্গ ফাইন ডাইনিং অভিজ্ঞতা।", hours: "সময়সূচী", hoursTueSat: "মঙ্গলবার – শনিবার: সন্ধ্যা ৬:০০ – রাত ১১:০০", hoursSun: "রবিবার ব্রাঞ্চ: সকাল ১১:০০ – বিকাল ৩:০০", hoursMon: "সোমবার: বন্ধ", contact: "যোগাযোগ", copyright: "© ২০২৬ Aurum. সর্বস্বত্ব সংরক্ষিত।" },
+        location: { subtitle: "অবস্থান", title: "আমাদের", titleAccent: "খুঁজুন", cardTitle: "আমাদের অবস্থান", phone: "ফোন", availability: "সময়সূচী", hours: "প্রতিদিন সকাল ১১টা থেকে রাত ১১টা" }
+      }
     };
+
+    const languages = [
+      { code: "ja", label: "日本語" },
+      { code: "en", label: "EN" },
+      { code: "bn", label: "বাংলা" }
+    ];
+
+    let currentLang = "ja";
+    let activeTab = "biryani";
 
     const dishImages = [
       "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&q=80",
@@ -305,24 +446,68 @@
       "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80"
     ];
 
-    let activeTab = "biryani";
+    // Helper: get nested value by dot-path
+    function t(key) {
+      const parts = key.split(".");
+      let val = translations[currentLang];
+      for (const p of parts) { val = val?.[p]; }
+      return val ?? key;
+    }
+
+    // Render language switcher
+    function renderLangSwitcher() {
+      const container = document.getElementById("lang-switcher");
+      container.innerHTML = "";
+      languages.forEach((lang, i) => {
+        const btn = document.createElement("button");
+        btn.textContent = lang.label;
+        btn.className = `lang-btn ${currentLang === lang.code ? "active" : "text-white/70"}`;
+        btn.onclick = () => { currentLang = lang.code; document.documentElement.lang = lang.code; applyTranslations(); };
+        container.appendChild(btn);
+        if (i < languages.length - 1) {
+          const sep = document.createElement("span");
+          sep.textContent = "|";
+          sep.className = "text-white/30";
+          container.appendChild(sep);
+        }
+      });
+    }
+
+    // Apply all translations
+    function applyTranslations() {
+      renderLangSwitcher();
+      // Update all data-i18n elements
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        el.textContent = t(el.dataset.i18n);
+      });
+      // Update placeholders
+      document.getElementById("input-name").placeholder = t("reservation.name");
+      document.getElementById("input-phone").placeholder = t("reservation.phone");
+      document.getElementById("input-guests").placeholder = t("reservation.guests");
+      // Re-render menu
+      renderTabs();
+      renderGrid();
+    }
 
     function renderTabs() {
       const container = document.getElementById("menu-tabs");
       container.innerHTML = "";
-      for (const key in menuData) {
+      const categories = ["biryani", "curry", "setMenu", "kebab", "beverage"];
+      categories.forEach(key => {
         const btn = document.createElement("button");
-        btn.textContent = menuData[key].label;
+        btn.textContent = t("menu." + key);
         btn.className = `px-5 py-2.5 text-sm font-body tracking-wider uppercase transition-all rounded-sm border ${key === activeTab ? "tab-active" : "tab-inactive"}`;
         btn.onclick = () => { activeTab = key; renderTabs(); renderGrid(); };
         container.appendChild(btn);
-      }
+      });
     }
 
     function renderGrid() {
       const grid = document.getElementById("menu-grid");
       grid.innerHTML = "";
-      menuData[activeTab].items.forEach((item, i) => {
+      const items = t("menu." + activeTab + "Items");
+      if (!Array.isArray(items)) return;
+      items.forEach((item, i) => {
         const card = document.createElement("div");
         card.className = "menu-card group";
         card.innerHTML = `
@@ -341,8 +526,8 @@
       });
     }
 
-    renderTabs();
-    renderGrid();
+    // Init
+    applyTranslations();
   </script>
 </body>
 </html>
